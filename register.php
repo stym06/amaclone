@@ -95,23 +95,19 @@
 		}
 
 		else {
-		
-		$sql = "INSERT INTO `user_info` 
-		(`user_id`, `first_name`, `last_name`, `email`, 
-		`password`, `mobile`, `address1`, `address2`) 
-		VALUES (NULL, '$f_name', '$l_name', '$email', 
-		'$password', '$mobile', '$address1', '$address2')";
-		$run_query = mysqli_query($conn,$sql);
-		if($run_query){
-			echo "
-				<div class='alert alert-success'>
-					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>You are Registered successfully..!</b>
-				</div>
-			";
+					$sql="INSERT INTO user_info (first_name, last_name, email, password, mobile, address1, address2) VALUES ('$f_name','$l_name','$email','$password','$mobile','$address1','$address2')";
+					$run_query=mysqli_query($conn,$sql);
+					if($run_query){
+						echo "
+								<div class='alert alert-success'>
+									<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+									Click <b><a href='index.php'>here</a></b> to login.
+								</div>
+						";
+					}
 			}
 		}
-	}
+	
 
 	
 
