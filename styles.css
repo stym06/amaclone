@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+@import url('https://fonts.googleapis.com/css?family=Abel|Bubbler+One|Inconsolata');
+
+
+
+.one-time{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.navbar-brand{
+  font-family: Open Sans;
+  font-size: 200%;
+  font-style: italic;
+}
+
+body{
+  font-family: Abel;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+#topnav{
+  height:70px;
+}
+#topnav > * {
+  position: relative;
+  top:7px;
+}
+#search{
+  position: relative;
+  left:360px;
+}
+#search_btn{
+  position: relative;
+  left:360px;
+}
+
+#shoppingcart{
+  position: relative;
+  right: 240px;
+}
