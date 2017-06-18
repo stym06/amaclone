@@ -23,7 +23,7 @@
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $f_name is not valid..!</b>
+				<b>First name is not valid..!</b>
 			</div>
 		";
 		exit();
@@ -33,7 +33,7 @@
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $l_name is not valid..!</b>
+				<b>Last name is not valid..!</b>
 			</div>
 		";
 		exit();
@@ -43,7 +43,7 @@
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $email is not valid..!</b>
+				<b>Email is not valid..!</b>
 			</div>
 		";
 		exit();
@@ -73,7 +73,7 @@
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Mobile number must be 10 digit</b>
+				<b>Mobile number must be 10 digits</b>
 			</div>
 		";
 		exit();

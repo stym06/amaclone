@@ -53,9 +53,9 @@
 							<div class="panel-heading">Login</div>
 							<div class="panel-heading">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email">
+								<input type="email" class="login form-control" id="email">
 								<label for="email">Password</label>
-								<input type="password" class="form-control" id="password">
+								<input type="password" class="login form-control" id="password">
 								<p><br></p>
 								<a href="#" style="color: white;list-style-type: none;">Forgot Password?</a>
 								<input type="submit" class="btn btn-success" style="float: right;bottom:12px;" id="login" value="Login" name="">

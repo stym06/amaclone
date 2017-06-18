@@ -128,8 +128,8 @@ $(document).ready(function(){
 			method: 'POST',
 			data: {cartcount:1},
 			success: function(data){
-				$('.badge').html(data);
-				$('.badge').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+				$('#cart_badge').html(data);
+				$('#cart_badge').fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 			}
 		})
 	}
@@ -313,6 +313,22 @@ $(document).ready(function(){
 				$('#get_product').html(data);
 			}
 		})
+	})
+
+	$('.login').keypress(function(e){
+
+		if(e.which==13){
+			$('#login').click();
+			return false;
+		}
+	})
+
+	$('#search').keypress(function(e){
+
+		if(e.which==13){
+			$('#search_btn').click();
+			return false;
+		}
 	})
 	
 })

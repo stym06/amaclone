@@ -67,12 +67,15 @@
 					</div>
 				</div>
 				<button class='btn btn-success btn-lg pull-right' id='checkout_btn' data-toggle="modal" data-target="#myModal">Checkout</button>
+				<div class='pull-left' id="paypal-button"></div>
 			</div>
 
 			<div class="col-md-2"></div>
 		</div>
 	</div>
 
+
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<script src="assets/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>

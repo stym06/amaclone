@@ -30,7 +30,7 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li id='shoppingcart'><a id="carticon" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge">2</span>	</a>
+				<li id='shoppingcart'><a id="carticon" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"></span>Cart <span class="badge" id="cart_badge">2</span>	</a>
 					<div class="dropdown-menu" style="width: 400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">

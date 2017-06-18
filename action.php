@@ -4,13 +4,17 @@
 	if(isset($_POST["category"])){
 		$category_query="SELECT * FROM categories";
 		$run_query=mysqli_query($conn,$category_query);
+		$numrows=mysqli_num_rows($run_query);
 		echo "<div class='nav nav-pills nav-stacked'>
-					<li class='active'><a href='#'><h4>Categories</h4></a></li>";
+					<li class='active'><a href='#'><h4>Categories<span class='badge' style='background-color:yellow; color:blue; float:right;'>$numrows</span></h4></a></li>";
 		if(mysqli_num_rows($run_query)){
 			while($row=mysqli_fetch_array($run_query)){
 				$cid=$row['cat_id'];
 				$cat_name=$row['cat_title'];
-				echo "<li><a href='#' class='category' cid='$cid'>$cat_name</a></li>";
+				$nsql="SELECT * FROM products WHERE product_cat='$cid'";
+				$n_run_query=mysqli_query($conn,$nsql);
+				$numrows=mysqli_num_rows($n_run_query);
+				echo "<li><a href='#' class='category' cid='$cid'>$cat_name<span class='badge' style='float:right;'>$numrows</span></a></li>";
 			}
 			echo "</div>";
 		}
@@ -19,13 +23,17 @@
 	if(isset($_POST["brand"])){
 		$category_query="SELECT * FROM brands";
 		$run_query=mysqli_query($conn,$category_query);
+		$numrows=mysqli_num_rows($run_query);
 		echo "<div class='nav nav-pills nav-stacked'>
-					<li class='active'><a href='#'><h4>Brands</h4></a></li>";
+					<li class='active'><a href='#'><h4>Brands<span class='badge' style='background-color:yellow; color:blue; float:right;'>$numrows</span></h4></a></li>";
 		if(mysqli_num_rows($run_query)){
 			while($row=mysqli_fetch_array($run_query)){
 				$bid=$row['brand_id'];
 				$brand_name=$row['brand_title'];
-				echo "<li><a href='#' class='brand' bid='$bid'>$brand_name</a></li>";
+				$brandsql="SELECT * FROM products WHERE product_brand='$bid'";
+				$brand_query=mysqli_query($conn,$brandsql);
+				$brand_num=mysqli_num_rows($brand_query);
+				echo "<li><a href='#' class='brand' bid='$bid'>$brand_name<span class='badge' style='float:right;'>$brand_num</span></a></li>";
 			}
 			echo "</div>";
 		}
@@ -52,10 +60,10 @@
 		}
 		else{$start=0;}
 		if(isset($_POST['price_sorted'])){
-			$product_query="SELECT * FROM products ORDER BY product_price";
+			$product_query="SELECT * FROM products ORDER BY product_price LIMIT $start,$limit";
 		}
 		elseif(isset($_POST['pop_sorted'])){
-			$product_query="SELECT * FROM products ORDER BY RAND()";
+			$product_query="SELECT * FROM products ORDER BY RAND() LIMIT $start,$limit";
 		}
 		else{
 		$product_query="SELECT * FROM products LIMIT $start,$limit";
@@ -87,7 +95,7 @@
 		}
 	}
 
-	if(isset($_POST['get_selected_Category']) || isset($_POST['get_selected_brand']) || isset($_POST['search']) || isset($_POST['price_sorted']))
+	if(isset($_POST['get_selected_Category']) || isset($_POST['get_selected_brand']) || isset($_POST['search']))
 	{
 		if(isset($_POST['get_selected_Category'])){
 			$cid=$_POST['cat_id'];
